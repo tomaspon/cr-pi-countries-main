@@ -3,7 +3,6 @@ import Card from "../card/Card";
 import styles from "./Cards.module.css";
 
 const Cards = ({ countries, currentPage, cardsPerPage }) => {
-  console.log("ESTO VIENE DE CARDS", countries)
   if (!countries || !Array.isArray(countries)) {
     return <div>No se han encontrado países.</div>;
   }

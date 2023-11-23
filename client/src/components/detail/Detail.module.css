@@ -1,0 +1,16 @@
+body{
+    background-image: url("../../assets/76827.jpg");
+    background-color: gray;
+    background-size: cover;
+}
+
+.detailContainer{
+    background-color: white;
+    color: black;
+    width: 1000px;
+    height: 600px;
+}
+
+.homeButton{
+    display: flex;
+}

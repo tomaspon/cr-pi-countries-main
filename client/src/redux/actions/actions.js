@@ -20,7 +20,7 @@ import {
           type: COUNTRIES,
           payload: response.data,
         });
-        console.log("ESTO VIENE DEL ACTION COUNTRIE", responde.data)
+        console.log("ESTO VIENE DEL ACTION COUNTRIE", response.data)
       } catch (error) {
         throw Error(error.message);
       }
@@ -41,7 +41,7 @@ import {
     };
   };
   
-  export const getCountrieById = (id) => {
+  export const getCountryById = (id) => {
     return async (dispatch) => {
       try {
         const response = await axios.get(`http://localhost:3001/countries/${id}`);
@@ -55,7 +55,7 @@ import {
     };
   };
   
-  export const getCountriesByName = (name) => {
+  export const getCountryByName = (name) => {
     return async (dispatch) => {
       try {
         const response = await axios.get(`http://localhost:3001/countries?name=${name}`);
