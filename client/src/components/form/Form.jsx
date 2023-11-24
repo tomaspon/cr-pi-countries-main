@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createActivity, getCountries } from "../../redux/actions/actions";
 import validation from "./validation";
+import NavBar from "../navBar/NavBar";
+import style from "./Form.module.css"
 
 const Form = () => {
   const dispatch = useDispatch();
@@ -53,9 +55,9 @@ const Form = () => {
   }, [activity]);
 
   return (
-    <div >
+    <div className={style.formContainer}>
       <h2>Create activity</h2>
-      <form onSubmit={handleSubmit} >
+      <form onSubmit={handleSubmit}>
 
         <div>
           <label>Name:</label>
@@ -93,11 +95,11 @@ const Form = () => {
         </div>
 
         <div>
-          <label>Countries:</label>
+          <label>Countries</label>
           {countries.slice().sort((a, b) => a.name.localeCompare(b.name)).map((country) => (
               <div key={country.id}>
                 <input type="checkbox" id={country.id} value={country.id} checked={activity.countries.includes(country.id)} onChange={handleCountryChange}/>
-                <label htmlFor={country.id}>{country.name}</label>
+                <label htmlFor={country.id}>{country.name} <img src={country.flag_image} alt="" className={style.formFlag}/></label>
               </div>
             ))}
           {errors.countries && (<p>{errors.countries}</p>)}

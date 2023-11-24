@@ -1,36 +1,18 @@
 .navContainer{
-    display: inline-block;
-    height: 80px;
+    display:flex;
+    justify-content: start;
+    flex-wrap: wrap;
     background-color: white;
-    width: 100%;
+    color: black;
+    list-style: none;
+    padding: 20px;
 }
 
 .navContainer li{
-    display: inline-block;
-    list-style:none
-}
-
-.navContainer select{
-    background-color: white;
-    color: rgb(69, 69, 69);
-    margin: 16px;
-    padding: 5px;
-    width: 200px;
-    border-radius: 6px;
-    border: solid 1px black;
-}
-
-.navContainer option{
-    padding: 4px;
-    margin:  4px;
-    border-radius: 10px;
-}
-
-.searchBar {
+    margin-left: 58px;
     color: black;
-    width: 200px;
-    height: 30px;
-    background-color: white;
-    border: solid black 1px;
-    border-radius: 6px;
+}
+
+.as{
+    color: black;
 }

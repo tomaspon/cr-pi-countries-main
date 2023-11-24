@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "../card/Card";
-import styles from "./Cards.module.css";
+import style from "./Cards.module.css";
 
 const Cards = ({ countries, currentPage, cardsPerPage }) => {
   if (!countries || !Array.isArray(countries)) {
@@ -13,10 +13,10 @@ const Cards = ({ countries, currentPage, cardsPerPage }) => {
 
   return (
     
-    <div className={styles.cardsContainer}>
+    <div className={style.cardsContainer}>
     
       {currentCards.map(({id,name,flag_image,continents,capital,subregion,area,population,}) => (
-          <div key={id} className={styles.card}>
+          <div key={id} className={style.card}>
             <Card
               id={id}
               name={name}

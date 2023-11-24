@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {getCountries,getActivities,getCountryByName,orderCountries,orderByPopulation,filterActivities,filterContinents,} from "../../redux/actions/actions";
 import Cards from "../cards/Cards";
+import Filters from "../filter/Filters"
 import NavBar from "../navBar/NavBar"
+import style from "./Home.module.css"
 
 const Home = () => {
     const dispatch = useDispatch();
@@ -10,7 +12,7 @@ const Home = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const cardsPerPage = 10;
 
-    const handleFilterByName = (name) => {
+      const handleFilterByName = (name) => {
         setCurrentPage(1);
         dispatch(getCountryByName(name));
       };
@@ -40,54 +42,40 @@ const Home = () => {
       dispatch(getActivities());
     }, [dispatch]);
 
-
   return (
     <div>
-        <div>
-            <NavBar 
-                onSearch={handleFilterByName} 
-                onFilter={handleFilter} 
-                onFilterActivities={handleFilterActivities} 
-                onOrder={handleOrder} 
-                onOrderByPopulation={handleOrderByPopulation}
-            />
+      <div>
+        <NavBar/>
+        <Filters 
+          onSearch={handleFilterByName} 
+          onFilter={handleFilter} 
+          onFilterActivities={handleFilterActivities} 
+          onOrder={handleOrder} 
+          onOrderByPopulation={handleOrderByPopulation}
+        />
 
-        <div>
-          <button
-            onClick={() => setCurrentPage(currentPage - 1)}
-            disabled={currentPage === 1}
-          >Prev
-          </button>
-          <span>
-            Page {currentPage} of {Math.ceil(filteredCountries.length / cardsPerPage)}
-          </span>
-          <button
-            onClick={() => setCurrentPage(currentPage + 1)}
-            disabled={currentPage * cardsPerPage >= filteredCountries.length}
-          >Next</button>
-        </div>
-          <Cards
-            countries={filteredCountries}
-            currentPage={currentPage}
-            setCurrentPage={setCurrentPage}
-            cardsPerPage={cardsPerPage}
-          />
-        <div>
-          <button
-            onClick={() => setCurrentPage(currentPage - 1)}
-            disabled={currentPage === 1}
-          >Prev
-          </button>
-          <span>
-            Page {currentPage} of {Math.ceil(filteredCountries.length / cardsPerPage)}
-          </span>
-          <button
-            onClick={() => setCurrentPage(currentPage + 1)}
-            disabled={currentPage * cardsPerPage >= filteredCountries.length}
-          >Next</button>
-        </div>
-        </div>
-        </div>
-    )}
+        <Cards
+          countries={filteredCountries}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+          cardsPerPage={cardsPerPage}
+        />
+        <div className={style.sPaginated}>
+        <button
+          onClick={() => setCurrentPage(currentPage - 1)}
+          disabled={currentPage === 1}
+        >⬅
+        </button>
+        <span>
+          Page {currentPage} of {Math.ceil(filteredCountries.length / cardsPerPage)}
+        </span>
+        <button
+          onClick={() => setCurrentPage(currentPage + 1)}
+          disabled={currentPage * cardsPerPage >= filteredCountries.length}
+        >➡</button>
+      </div>
+    </div>
+  </div>
+)}
 
 export default Home;

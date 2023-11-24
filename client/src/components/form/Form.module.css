@@ -1,0 +1,15 @@
+.formFlag{
+    width: 20px;
+    height: 14px;
+}
+
+.formContainer{
+    background-color: white;
+    color: black;
+}
+
+form{
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: start;
+}

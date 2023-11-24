@@ -1,0 +1,62 @@
+
+.filterContainer{
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    text-align: start;
+    position: relative;
+}
+
+.filterContainer li{
+    display: inline-block;
+    list-style:none
+}
+
+.filterContainer select{
+    background-color: white;
+    color: rgb(69, 69, 69);
+    margin: 16px;
+    padding: 5px;
+    width: 200px;
+    border-radius: 6px;
+    border: solid 1px black;
+}
+
+.filterList{
+    position: relative;
+    right: 47px;
+}
+
+.searchBar {
+    color: black;
+    width: 200px;
+    padding: 5.5px;
+    background-color: white;
+    border: solid black 1px;
+    border-radius: 6px;
+}
+
+.searchButton{
+    border: none;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    right: 30px;
+    top: 5px;
+    font-size: 16px;
+    background:none;
+}
+
+.searchButton{
+    display: inline-block;
+
+}
+
+button img{
+    width: 22px;
+    height: 22px;
+    position: relative;
+    right: 2px;
+    top: 2px;
+}
