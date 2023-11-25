@@ -69,16 +69,24 @@ import {
     };
   };
   
-  export const createActivity = (activity) => {
+  export const createActivity = (activityData) => {
     return async (dispatch) => {
       try {
-        const response = await axios.post(`http://localhost:3001/activities`, activity);
+        // Realiza la solicitud POST al servidor
+        const response = await axios.post('http://localhost:3001/activities', activityData);
+  
+        // Dispatch para actualizar el estado con la nueva actividad
         dispatch({
           type: CREATE_ACTIVITY,
           payload: response.data,
         });
+  
+        // Redirige al usuario a la página de detalle de la nueva actividad
+        navigate(`/detail/${response.data.id}`); // Ajusta el path según la estructura de tu aplicación
+  
       } catch (error) {
-        throw Error(error.message);
+        console.error('Error al crear la actividad:', error);
+        // Puedes manejar el error de alguna manera si es necesario
       }
     };
   };

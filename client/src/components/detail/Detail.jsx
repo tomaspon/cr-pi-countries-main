@@ -6,17 +6,36 @@ import { formatNumber } from "../../generalFunctions/generalFunctions";
 import style from "./Detail.module.css"
 import { Link } from "react-router-dom";
 
-const Detail = () => {
+const Detail = (props) => {
   const params = useParams();
   const dispatch = useDispatch();
   const countryDetails = useSelector((state) => state.countryDetails);
   const [error, setError] = useState(false);
+  const [countryActivities, setCountryActivities] = useState([]);
 
   useEffect(() => {
     dispatch(getCountryById(params?.id))
       .then(() => setError(false))
       .catch(() => setError(true));
   }, [params]);
+
+  useEffect(() => {
+    const fetchCountryActivities = async () => {
+      try {
+        // Verifica si 'props.country' está definido y tiene la propiedad 'id'
+        if (props.country && props.country.id) {
+          const response = await axios.get(`http://localhost:3001/countries/${props.country.id}/activities`);
+          setCountryActivities(response.data);
+        } else {
+          console.error('El objeto props.country o su propiedad id es undefined.');
+        }
+      } catch (error) {
+        console.error('Error al obtener actividades asociadas al país:', error);
+      }
+    };
+
+    fetchCountryActivities();
+  }, [props.country]);
 
   return (
     <div className={style.detailContainer}>
@@ -53,7 +72,15 @@ const Detail = () => {
                 </div>
               ))}
           </div>) 
-        : (<p>No activities were found, you can filter all activities in the main menu.</p>)}
+        : (<div>
+          <h3>Activities asociated with the country:</h3>
+          {countryActivities.map((activity) => (
+            <div key={activity.id}>
+              <p>{activity.name}</p>
+              {/* Puedes mostrar otros detalles de la actividad si es necesario */}
+            </div>
+          ))}
+        </div>)}
       </div>
     </div>
   );

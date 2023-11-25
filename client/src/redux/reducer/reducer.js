@@ -47,7 +47,11 @@ import {
         };
         
         case CREATE_ACTIVITY:
-          return { ...state, activities: action.payload }; // Se recibe la activities para que luego mostremos un detail con la actividad creada
+          return {
+            ...state,
+            // Actualiza el array de actividades con la nueva actividad
+            activities: [...state.activities, action.payload],
+          };
           
           case FILTER_CONTINENTS:
             let filtered = state.countries;
