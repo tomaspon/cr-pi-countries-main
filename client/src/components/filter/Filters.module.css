@@ -18,6 +18,7 @@
     margin: 16px;
     padding: 5px;
     width: 200px;
+    cursor: pointer;
     border-radius: 6px;
     border: solid 1px black;
 }
@@ -59,4 +60,6 @@ button img{
     position: relative;
     right: 2px;
     top: 2px;
+    cursor: pointer;
+
 }

@@ -11,17 +11,21 @@ const Card = ({id, name, flag_image, continents, capital, subregion, area, popul
 
   return (
     <div onClick={handleClick} className={style.cardContainer}>
-        <img src={flag_image} alt={name}/>
         <Link to={`/detail/${id}`}>
+        <img src={flag_image} alt={name}/>
+        <div className={style.cardContent}>
         <h2>{name}</h2>
-        </Link>
         <p>Continent: {continents}</p>
         <p>Capital: {capital}</p>
         {subregion && <p>Subregion: {subregion}</p>}
         {area && <p>Area: {formatNumber(area)} km²</p>}
         <p>Population: {formatNumber(population)}</p>
-        <Link to={`/detail/activities/${id}`}>
-          <p>Show activities</p>
+        <div className={style.showActivities}>
+        <Link to={`/detail/${id}`}>
+          <h5>Click to show details</h5>
+        </Link>
+        </div>
+        </div>
         </Link>
       </div>
   );

@@ -1,6 +1,5 @@
 body{
-    width: 1519px;
-    height: 715px;
+
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -39,6 +38,7 @@ font-weight: 600;
 margin: 0 auto;
 display: flex;
 border: none;
+cursor: pointer;
 }
 
 .prevCardContainer{
@@ -68,19 +68,18 @@ border: none;
     margin: 20px;
 }
 
-p{
+.formContainer p{
     margin: 0 auto;
     color: brown;
     font-size: 12px;
 }
 
-h2{
+.formContainer h2{
     font-weight: 500;
 }
 
 .container label{
     color: black;
-
 }
 
 .allLabels{

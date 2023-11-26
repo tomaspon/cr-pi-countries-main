@@ -8,7 +8,7 @@ const NavBar = () => {
           <li className={style.as}>
             <Link to="/home">Home</Link>
           </li>
-          <li>
+          <li className={style.as}>
             <Link to="/activity">Create activity</Link>
           </li>
       </nav>

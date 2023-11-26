@@ -22,4 +22,16 @@
     height: 200px;
     justify-self: center;
     object-fit: cover;
-    }
+}
+
+.cardContent{
+    margin: 10px;
+}
+
+.cardContent p{
+    font-size: 16px;
+}
+
+.showActivities{
+    text-align: center;
+}

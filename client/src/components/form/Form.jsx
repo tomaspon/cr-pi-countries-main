@@ -120,7 +120,7 @@ const Form = () => {
       <button type="submit" onClick={handleSubmit} className={style.createButton}>CREATE</button>
       </form>
       <div className={style.prevCardContainer}>
-        <h2>PREVISUALIZER</h2>
+        <h2>PREVIEW</h2>
         <div className={style.prevCardTexts}>
         <p>Name: {activity.name}</p>
         <p>Difficulty: {activity.difficulty}</p>

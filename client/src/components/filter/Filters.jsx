@@ -65,7 +65,7 @@ const Filters = ({onFilter, onSearch, onFilterActivities, onOrder, onOrderByPopu
           <li>
             <select id="filterContinent" onChange={handleFilter}>
               <option value="none" hidden>Filter by continent</option>
-              <option value="All">All continents</option>
+              <option value="All ">All continents</option>
               <option value="Africa">Africa</option>
               <option value="Antarctica">Antarctica</option>
               <option value="Asia">Asia</option>
