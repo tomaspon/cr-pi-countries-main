@@ -16,3 +16,11 @@
 .as{
     color: black;
 }
+
+.landingButton{
+    display: flex;
+    font-size: 12px;
+    position: absolute;
+    top:70px;
+    left: -50px;
+}

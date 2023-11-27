@@ -11,6 +11,9 @@ const NavBar = () => {
           <li className={style.as}>
             <Link to="/activity">Create activity</Link>
           </li>
+          <li className={style.landingButton}>
+            <Link to="/">↩ Go landing</Link>
+          </li>
       </nav>
     );
   };

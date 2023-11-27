@@ -5,6 +5,7 @@ import Cards from "../cards/Cards";
 import Filters from "../filter/Filters"
 import NavBar from "../navBar/NavBar"
 import style from "./Home.module.css"
+import fondoHome from "../../assets/76827.jpg"
 
 const Home = () => {
     const dispatch = useDispatch();
@@ -43,7 +44,7 @@ const Home = () => {
     }, [dispatch]);
 
   return (
-    <div>
+    <div style={{ background: `url(${fondoHome})`, backgroundSize: 'cover'}}>
       <div>
         <NavBar/>
         <Filters 
