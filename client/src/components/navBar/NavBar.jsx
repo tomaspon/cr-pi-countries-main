@@ -5,15 +5,18 @@ const NavBar = () => {
 
     return (
       <nav className={style.navContainer}>
-          <li className={style.as}>
-            <Link to="/home">Home</Link>
+      
+          <li>
+            <Link to="/home" style={{color:'black'}}>Home</Link>
           </li>
-          <li className={style.as}>
-            <Link to="/activity">Create activity</Link>
+          <hr style={{margin:'0', marginLeft:'50px', height:'6px', position:'relative', top:'10px', border:'solid 0.1px black'}}/>
+          <li>
+            <Link to="/activity" style={{color:'black'}}>Create activity</Link>
           </li>
           <li className={style.landingButton}>
-            <Link to="/">↩ Go landing</Link>
+            <Link to="/" style={{color:'black'}}>↩ Go landing</Link>
           </li>
+          
       </nav>
     );
   };

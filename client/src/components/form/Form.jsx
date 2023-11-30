@@ -55,7 +55,7 @@ const Form = () => {
 
   return (
     <div className={style.container}>
-      <Link to="/home" className={style.homeButton}>
+      <Link to="/home" className={style.homeButton} style={{color:'black'}}>
         ↩Go home
       </Link>
       <form onSubmit={handleSubmit} className={style.formContainer}>

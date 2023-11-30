@@ -15,13 +15,14 @@
 
 .filterContainer select{
     background-color: white;
-    color: rgb(69, 69, 69);
+    color: gray;
     margin: 16px;
     padding: 5px;
     width: 200px;
     cursor: pointer;
     border-radius: 6px;
-    border: solid 1px black;
+    border: solid 1px gray;
+    box-shadow: 0px 1px 2px black;
 }
 
 .filterList{
@@ -32,27 +33,30 @@
 .searchBar {
     color: black;
     width: 200px;
-    padding: 5.5px;
+    position: relative;
+    right: 2px;
+    padding: 6px;
     background-color: white;
-    border: solid black 1px;
+    border: solid gray 1px;
     border-radius: 6px;
+    box-shadow: 0px 1px 2px black;
 }
 
 .searchButton{
     border: none;
     border-radius: 100%;
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     position: relative;
-    right: 30px;
-    top: 5px;
+    right: 31px;
+    background-color: black;
+    top: 4.5px;
     font-size: 16px;
     background:none;
 }
 
 .searchButton{
     display: inline-block;
-
 }
 
 button img{
@@ -62,5 +66,4 @@ button img{
     right: 2px;
     top: 2px;
     cursor: pointer;
-
 }

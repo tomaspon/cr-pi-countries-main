@@ -9,12 +9,15 @@
 }
 
 .navContainer li{
-    margin-left: 58px;
+    margin-left: 67px;
     color: black;
 }
 
 .as{
+    color: blueviolet;
+    font-weight: 500;
     color: black;
+    text-decoration: none;
 }
 
 .landingButton{
@@ -23,4 +26,7 @@
     position: absolute;
     top:70px;
     left: -50px;
+    font-weight: 500;
+    color: black;
+    text-decoration: none;
 }

@@ -1,35 +1,18 @@
-
-.doubleCountrie{
-    font-size: 28px;
-    color: black;
-    background-color: none;
-    position: absolute;
-    top: -9px;
-    left: 20px;
-    margin-bottom: -90px;
-}
-
-.landingContainer{
-    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('../../assets/fondo.jpg');
-    height: 800px;
-    width: 1536px;
-    position: fixed;
-}
-
 .landingContent{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     position: relative;
-    top: 150px;
-    right: 400px;
+    top: 220px;
+    right: 200px;
     margin: 0 auto;
     color: black;
     flex-wrap: wrap;
-    background-color: rgba(255, 255, 255, 0.729);
+    background-color: rgba(255, 255, 255, 0.507);
     border-radius: 6px;
     border: solid 2px blueviolet;
     width: 438px;
     height: 380px;
-    backdrop-filter: blur(2px);
-    box-shadow: 6px 6px 20px black;
+    backdrop-filter: blur(5px);
+    box-shadow: 4px 4px 12px black;
 }
 
 .landingContent h1{
@@ -57,15 +40,16 @@
 }
 
 .landingContainer .doubleButton{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     position: absolute;
     margin: 0 auto;
     border: none;
     color: blueviolet;
     font-weight: 900;
     border-radius: 4px;
-    border: blueviolet 2px solid;
-    left: 482px;
-    bottom: 286px;
+    border: blueviolet 1px solid;
+    left: 870px;
+    bottom: 362px;
     background: none;
     padding: 4px;
     cursor:pointer;
