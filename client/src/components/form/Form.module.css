@@ -1,101 +1,101 @@
-body{
-    background-image: url("../../assets/76827.jpg");    
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    width: 100vw;
+body {
+  background-image: url("../../assets/76827.jpg");
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
 }
 
-.container{
-    display: flex;
-    justify-content: space-evenly;
+.container {
+  display: flex;
+  justify-content: space-evenly;
 }
 
-.formContainer{
-    margin: 100px;
-    background-color: white;
-    justify-content: center;
-    color: black;
-    border: solid 1px black;
-    border-radius: 10px;
-    height: 450px;
+.formContainer {
+  margin: 100px;
+  background-color: white;
+  justify-content: center;
+  color: black;
+  border: solid 1px black;
+  border-radius: 10px;
+  height: 450px;
 }
 
-form{
-    flex-wrap: wrap;
-    flex-direction: column;
-    text-align: start;
+form {
+  flex-wrap: wrap;
+  flex-direction: column;
+  text-align: start;
 }
 
-.createTitle{
-text-align: center;
+.createTitle {
+  text-align: center;
 }
 
-.createButton{
-    border-radius: 6px;
-    background-color: black;
-    color: white;
-    padding: 8px;
-    font-weight: 600;
-    margin: 0 auto;
-    display: flex;
-    border: none;
-    cursor: pointer;
+.createButton {
+  border-radius: 6px;
+  background-color: black;
+  color: white;
+  padding: 8px;
+  font-weight: 600;
+  margin: 0 auto;
+  display: flex;
+  border: none;
+  cursor: pointer;
 }
 
-.prevCardContainer{
-    display: flex;
-    flex-wrap: wrap;
-    padding: 10px;
-    width: 320px;
-    height: 300px;
-    margin: 100px;
-    border: solid 1px black;
-    background-color: white;
-    color: black;
-    border-radius: 10px;
-    overflow-x:auto;
+.prevCardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  width: 320px;
+  height: 300px;
+  margin: 100px;
+  border: solid 1px black;
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  overflow-x: auto;
 }
 
-.prevCardContainer::-webkit-scrollbar{
-    width: 0px;
+.prevCardContainer::-webkit-scrollbar {
+  width: 0px;
 }
 
-.prevCardContainer p{
-        color: black;
-        font-size:20px;
-        margin: 10px;
+.prevCardContainer p {
+  color: black;
+  font-size: 20px;
+  margin: 10px;
 }
 
-.prevCardTexts{
-    text-align: start;
-    margin: 20px;
+.prevCardTexts {
+  text-align: start;
+  margin: 20px;
 }
 
-.formContainer p{
-    margin: 0 auto;
-    color: brown;
-    font-size: 12px;
+.formContainer p {
+  margin: 0 auto;
+  color: brown;
+  font-size: 12px;
 }
 
-.formContainer h2{
-    font-weight: 500;
+.formContainer h2 {
+  font-weight: 500;
 }
 
-.container label{
-    color: black;
+.container label {
+  color: black;
 }
 
-.allLabels{
-    margin: 10px;
+.allLabels {
+  margin: 10px;
 }
 
-.homeButton{
-    position: absolute;
-    left: 2px;
+.homeButton {
+  position: absolute;
+  left: 2px;
 }
 
-.namePlaceholder::placeholder{
-    font-size: 12px
+.namePlaceHolder::placeholder {
+  font-size: 12px;
 }

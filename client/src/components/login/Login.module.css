@@ -1,106 +1,115 @@
 .loginContent {
-    border-radius: 6px;
-    bottom: 164px;
-    margin: 0 auto;
-    border: solid 2px blueviolet;
-    left: 221px;
-    box-shadow: 4px 4px 12px black;
-    padding: 50px;
-    font-family: sans-serif;
-    width: 216px;
-    height: 285px;
-    background-color: rgba(255, 255, 255, 0.507);
-    backdrop-filter: blur(5px);  font-size: large;
-    color: rgb(0, 0, 0);
-    display: block;
-    position: relative;
+  border-radius: 6px;
+  bottom: 163px;
+  margin: 0 auto;
+  border: solid 2px blueviolet;
+  left: 221px;
+  box-shadow: 4px 4px 12px black;
+  padding: 50px;
+  font-family: sans-serif;
+  width: 220px;
+  height: 280px;
+  background-color: rgba(255, 255, 255, 0.507);
+  backdrop-filter: blur(5px);
+  font-size: large;
+  color: rgb(0, 0, 0);
+  display: block;
+  position: relative;
 }
 
-
 .signInTitle {
-    margin: 0 auto;
-    text-align: start;
-    margin-top: 15px;
-    margin-bottom: 20px;
-    color: blueviolet;
-    font-size: 30px;
-    font-family: Helvetica, Arial, sans-serif;
-  }
-  
+  margin: 0 auto;
+  text-align: start;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  color: blueviolet;
+  font-size: 30px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
 .loginContent input {
-    background-color: #00000046;
-    margin: 0 auto;
-    box-shadow: blueviolet 0px 1px 0px;
-    border:solid 1px blueviolet;
-    border-radius: 4px;
-    width: 240px;
-    padding: 7px;
-    position: relative;
-    right: 10px;
-    box-sizing: border-box;
-    display: flex;
+  background-color: #00000046;
+  margin: 0 auto;
+  box-shadow: blueviolet 0px 1px 0px;
+  border: solid 1px blueviolet;
+  border-radius: 4px;
+  width: 240px;
+  padding: 7px;
+  position: relative;
+  right: 10px;
+  box-sizing: border-box;
+  display: flex;
 }
 
 .loginContent input::placeholder {
-    text-align: start;
-    color: rgb(0, 0, 0);
+  text-align: start;
+  position: relative;
+  left: -6px;
+  color: rgb(0, 0, 0);
 }
 
 .loginContent input:hover {
-    outline: solid blueviolet 1px;
-    box-shadow: black 2px 2px 3px;
-    border-color: blueviolet;
+  outline: solid blueviolet 1px;
+  box-shadow: black 2px 2px 3px;
+  border-color: blueviolet;
 }
 
 .loginContent input:focus {
-    color: blueviolet;
+  color: blueviolet;
 }
-  
+
 .loginContent input::after {
-    border-color: blueviolet;
+  border-color: blueviolet;
 }
 
 .loginContent button {
-    color: blueviolet;
-    font-family: sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    padding: 8px;
-    display: flex;
-    margin: 0 auto;
-    margin-top: 20px;
-    border: solid 1px blueviolet;
-    background-color: rgba(0, 0, 0, 0);
-    border-radius: 4px;
-    background-image: linear-gradient(to top, transparent);
-    box-shadow: blueviolet 1px 2px 8px;
+  color: blueviolet;
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px;
+  display: flex;
+  margin: 0 auto;
+  border: solid 1px blueviolet;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 4px;
+  background-image: linear-gradient(to top, transparent);
+  box-shadow: blueviolet 1px 2px 8px;
 }
 
 .loginContent button:active {
-    box-shadow: black 2px 1px 4px;
+  box-shadow: black 2px 1px 4px;
 }
 
 .loginContent button:hover {
-    box-shadow: 2px 3px 6px blueviolet;
-    background: blueviolet;
-    border: solid 1px blueviolet;
-    color: white;
+  box-shadow: 2px 3px 6px blueviolet;
+  background: blueviolet;
+  border: solid 1px blueviolet;
+  color: white;
 }
 
 .labelform {
-    display: flex;
-    justify-content: center;
-    font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  font-family: sans-serif;
 }
-  
+
+.noAccButton {
+  font-size: 14px;
+  display: inline-block;
+  width: 300px;
+  position: static;
+  top: 32px;
+}
+
 .error {
-    position: relative;
-    top: 4px;
-    left: 0px;
-    width: 250px;
-    margin: 0 auto;
-    text-align: start;
-    font-size: 12px;
-    font-family: Helvetica, Arial, sans-serif;
-    font-weight: 500;
-  }
+  position: relative;
+  top: 4px;
+  left: 0px;
+  width: 250px;
+  margin: 0 auto;
+  text-align: start;
+  font-size: 12px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 500;
+}
