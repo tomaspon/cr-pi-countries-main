@@ -2,7 +2,7 @@ const { Router } = require("express");
 const getCountries = require("../controllers/getCountries");
 const getCountryId = require("../controllers/getCountryId");
 const getCountryName = require("../controllers/getCountryName");
-const postActivity = require("../controllers/postActivity");
+const { postActivity } = require("../controllers/postActivity");
 const getActivities = require("../controllers/getActivities");
 
 const router = Router();
