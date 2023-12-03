@@ -1,10 +1,39 @@
-.detailContainer{
-    background-color: white;
-    color: black;
-    width: 1000px;
-    height: 600px;
+.detailContainer {
+  background: none;
+  color: black;
+  width: 1000px;
+  height: 600px;
+  display: flex;
 }
 
-.homeButton{
-    display: flex;
+.countryDetails {
+  background-color: red;
+}
+
+.countryDetailsContent p {
+  margin: 10px;
+}
+
+.homeButton {
+  display: flex;
+}
+
+.activityContainer {
+  background-color: red;
+  width: 400px;
+  height: 400px;
+  margin-top: 140px;
+}
+
+.activityContainer h2 {
+  font-size: 30px;
+}
+
+.contentOrder {
+  position: relative;
+  top: 100px;
+  margin: 0 auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

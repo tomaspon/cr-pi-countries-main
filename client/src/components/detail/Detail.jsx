@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getCountryById } from "../../redux/actions/actions";
 import { formatNumber } from "../../generalFunctions/generalFunctions";
+import ActivityCard from "../card/ActivityCard";
 import style from "./Detail.module.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -48,55 +49,57 @@ const Detail = (props) => {
   }, [props.country]);
 
   return (
-    <div className={style.detailContainer}>
+    <div className={`${style.detailContainer} ${style.contentOrder}`}>
       <Link to="/home" className={style.homeButton}>
         ↩Go home
       </Link>
-      {error ? (
+      <div>
         <div>
-          <h2>Country not found</h2>
-        </div>
-      ) : (
-        <div>
-          {countryDetails ? (
+          {error ? (
             <div>
-              <img src={countryDetails.flag_image} alt="" />
-              <h2>{countryDetails.name}</h2>
-              <p>Capital: {countryDetails.capital}</p>
-              <p>Subregion: {countryDetails.subregion}</p>
-              <p>Area: {formatNumber(countryDetails.area)} km²</p>
-              <p>Population: {formatNumber(countryDetails.population)}</p>
+              <h2>Country not found</h2>
             </div>
           ) : (
-            <p>Loading...</p>
+            <div className={`${style.countryDetails} ${style.contentOrder}`}>
+              {countryDetails ? (
+                <div className={style.countryDetailsContent}>
+                  <h2>{countryDetails.name}</h2>
+                  <img src={countryDetails.flag_image} alt="" />
+                  <p>Capital: {countryDetails.capital}</p>
+                  <p>Subregion: {countryDetails.subregion}</p>
+                  <p>Area: {formatNumber(countryDetails.area)} km²</p>
+                  <p>Population: {formatNumber(countryDetails.population)}</p>
+                </div>
+              ) : (
+                <p>Loading...</p>
+              )}
+            </div>
           )}
         </div>
-      )}
-      <div>
-        {countryDetails && countryDetails.Activities.length >= 1 ? (
-          <div>
-            <h2>Activities</h2>
-            {countryDetails &&
-              countryDetails.Activities.map((activity) => (
+        <div>
+          {countryDetails && countryDetails.Activities.length >= 1 ? (
+            <div className={style.activityContainer}>
+              <h2>Country activities:</h2>
+              {countryDetails &&
+                countryDetails.Activities.map((activity) => (
+                  <div key={activity.id}>
+                    <h3>{activity.name}</h3>
+                    <p>Difficulty: {activity.difficulty}</p>
+                    <p>Duration: {activity.duration} hours</p>
+                    <p>Season: {activity.season}</p>
+                  </div>
+                ))}
+            </div>
+          ) : (
+            <div>
+              {countryActivities.map((activity) => (
                 <div key={activity.id}>
-                  <h3>{activity.name}</h3>
-                  <p>Difficulty: {activity.difficulty}</p>
-                  <p>Duration: {activity.duration} hours</p>
-                  <p>Season: {activity.season}</p>
+                  <ActivityCard />
                 </div>
               ))}
-          </div>
-        ) : (
-          <div>
-            <h3>Activities asociated with the country:</h3>
-            {countryActivities.map((activity) => (
-              <div key={activity.id}>
-                <p>{activity.name}</p>
-                {/* Puedes mostrar otros detalles de la actividad si es necesario */}
-              </div>
-            ))}
-          </div>
-        )}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

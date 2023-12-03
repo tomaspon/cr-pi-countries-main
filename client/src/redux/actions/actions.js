@@ -78,7 +78,7 @@ export const createActivity = (activityData) => {
     try {
       // Realiza la solicitud POST al servidor
       const response = await axios.post(
-        "http://localhost:3001/activities",
+        "http://localhost:3001/create-activity", // Ajusta la ruta según tu backend
         activityData
       );
 
@@ -87,9 +87,6 @@ export const createActivity = (activityData) => {
         type: CREATE_ACTIVITY,
         payload: response.data,
       });
-
-      // Redirige al usuario a la página de detalle de la nueva actividad
-      navigate(`/detail/${response.data.id}`); // Ajusta el path según la estructura de tu aplicación
     } catch (error) {
       console.error("Error al crear la actividad:", error);
       // Puedes manejar el error de alguna manera si es necesario
