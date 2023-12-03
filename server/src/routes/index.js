@@ -2,7 +2,7 @@ const { Router } = require("express");
 const getCountries = require("../controllers/getCountries");
 const getCountryId = require("../controllers/getCountryId");
 const getCountryName = require("../controllers/getCountryName");
-const { postActivity } = require("../controllers/postActivity");
+const { postActivityHand } = require("../handlers/postActivityHand");
 const getActivities = require("../controllers/getActivities");
 
 const router = Router();
@@ -27,7 +27,7 @@ router.get("/countries", async (req, res) => {
 });
 
 router.get("/countries/:idPais", getCountryId);
-router.post("/activities", postActivity);
-router.get("/activities", getActivities);
+router.get("/create-activity", getActivities);
+router.post("/create-activity", postActivityHand);
 
 module.exports = router;
