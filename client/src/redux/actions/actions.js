@@ -20,7 +20,6 @@ export const getCountries = () => {
         type: COUNTRIES,
         payload: response.data,
       });
-      console.log("ESTO VIENE DEL ACTION COUNTRIE", response.data);
     } catch (error) {
       throw Error(error.message);
     }

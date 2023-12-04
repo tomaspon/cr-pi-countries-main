@@ -1,39 +1,75 @@
-.detailContainer {
-  background: none;
-  color: black;
-  width: 1000px;
-  height: 600px;
-  display: flex;
-}
-
 .countryDetails {
-  background-color: red;
+  background-color: rgba(255, 255, 255, 0.258);
+  color: black;
+  backdrop-filter: blur(2px);
+  box-shadow: 0px 4px 10px black;
+  border: solid 2px blueviolet;
+  border-radius: 4px;
+  width: 440px;
+  height: 580px;
+  margin: 0 auto;
+  position: relative;
+  top: 80px;
 }
 
-.countryDetailsContent p {
-  margin: 10px;
+.countryDetails img {
+  box-shadow: black 0px 1px 5px;
 }
 
 .homeButton {
   display: flex;
 }
 
+.contentOrder hr {
+  margin: 100px;
+  border: none;
+}
+
 .activityContainer {
-  background-color: red;
-  width: 400px;
-  height: 400px;
-  margin-top: 140px;
+  position: relative;
+  top: 55px;
+  width: 440px;
+  height: 500px;
+  background-color: rgba(128, 128, 128, 0.258);
+  color: black;
+  backdrop-filter: blur(2px);
+  border: solid 2px blueviolet;
+  box-shadow: 0px 4px 10px black;
+  border-radius: 4px;
+  text-align: start;
 }
 
 .activityContainer h2 {
   font-size: 30px;
+  text-align: center;
+  margin: 30px;
+}
+
+.activityContainer h3 {
+  font-size: 26px;
+  margin: 30px;
+}
+
+.activityContainer h4 {
+  font-size: 22px;
+  font-weight: 400;
+  margin-top: -20px;
+  margin-left: 40px;
+}
+
+.activityContainer p {
+  margin: 40px;
+  font-size: 18px;
+}
+
+.countryDetails img {
+  margin-top: 20px;
 }
 
 .contentOrder {
-  position: relative;
-  top: 100px;
-  margin: 0 auto;
-  flex-direction: column;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin: 100px;
   justify-content: center;
-  align-items: center;
 }

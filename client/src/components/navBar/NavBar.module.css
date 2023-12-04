@@ -13,11 +13,6 @@
   color: black;
 }
 
-.navContainer li:hover {
-  font-size: 17px;
-  transition: 0.2s;
-}
-
 .as {
   color: blueviolet;
   font-weight: 500;
@@ -34,4 +29,9 @@
   font-weight: 500;
   color: black;
   text-decoration: none;
+}
+
+.landingButton:hover {
+  font-size: 13px;
+  transition: 0.2s;
 }

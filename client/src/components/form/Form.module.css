@@ -9,7 +9,7 @@ body {
 
 .container {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .formContainer {
@@ -17,9 +17,16 @@ body {
   background-color: white;
   justify-content: center;
   color: black;
-  border: solid 1px black;
-  border-radius: 10px;
-  height: 450px;
+  border: solid 2px blueviolet;
+  border-radius: 4px;
+  width: 400px;
+  height: 680px;
+  font-size: 20px;
+}
+
+.formContent {
+  justify-content: center;
+  margin-left: 10px;
 }
 
 form {
@@ -28,14 +35,22 @@ form {
   text-align: start;
 }
 
+.labels {
+  position: relative;
+  top: 6px;
+}
+
 .createTitle {
+  color: blueviolet;
   text-align: center;
 }
 
 .createButton {
-  border-radius: 6px;
+  border-radius: 4px;
   background-color: black;
   color: white;
+  position: relative;
+  top: 8px;
   padding: 8px;
   font-weight: 600;
   margin: 0 auto;
@@ -44,17 +59,25 @@ form {
   cursor: pointer;
 }
 
+.createButton:hover {
+  box-shadow: 2px 3px 6px blueviolet;
+  background: blueviolet;
+  transition: 0.2s;
+  border: solid 1px blueviolet;
+  color: white;
+}
+
 .prevCardContainer {
-  display: flex;
+  display: block;
   flex-wrap: wrap;
   padding: 10px;
   width: 320px;
-  height: 300px;
+  height: 400px;
   margin: 100px;
-  border: solid 1px black;
+  border: solid 2px blueviolet;
   background-color: white;
   color: black;
-  border-radius: 10px;
+  border-radius: 4px;
   overflow-x: auto;
 }
 
@@ -66,6 +89,10 @@ form {
   color: black;
   font-size: 20px;
   margin: 10px;
+}
+
+.prevCardContainer h2 {
+  color: blueviolet;
 }
 
 .prevCardTexts {
@@ -87,6 +114,21 @@ form {
   color: black;
 }
 
+.selectContainer select {
+  height: 200px;
+  margin-top: 8px;
+}
+
+.selectContainer option {
+  margin-bottom: 2px;
+  font-size: 16px;
+  margin-top: 6px;
+  margin-left: 4px;
+}
+
+.selectContainer option::before {
+  background-color: red;
+}
 .allLabels {
   margin: 10px;
 }

@@ -43,9 +43,17 @@ const Card = ({
           <p style={{ color: "black", fontWeight: "400" }}>
             Population: {formatNumber(population)}
           </p>
-          <div className={style.showActivities}>
+          <div>
             <Link to={`/detail/${id}`}>
-              <h5 style={{ color: "black" }}>
+              <h5
+                style={{
+                  fontSize: "12px",
+                  color: "blueviolet",
+                  fontWeight: "600",
+                  margin: "0 auto",
+                  textAlign: "center",
+                }}
+              >
                 Click in the card to show details
               </h5>
             </Link>

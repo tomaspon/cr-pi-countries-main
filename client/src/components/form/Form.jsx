@@ -69,97 +69,101 @@ const Form = () => {
         ↩Go home
       </Link>
       <form onSubmit={handleSubmit} className={style.formContainer}>
-        <div>
-          <h2 className={style.createTitle}>CREATE ACTIVITY</h2>
+        <div className={style.formContent}>
+          <div>
+            <h2 className={style.createTitle}>CREATE ACTIVITY</h2>
+          </div>
+          <div className={style.allLabels}>
+            <div>
+              <label className={style.labels}>Name:</label>
+              <br />
+              <input
+                placeholder="Name activity"
+                type="text"
+                name="name"
+                value={activity.name}
+                onChange={handleChange}
+                className={style.namePlaceHolder}
+              />
+              {errors.name !== "" && <p>{errors.name}</p>}
+            </div>
+
+            <div>
+              <label className={style.labels}>Difficulty:</label>
+              <br />
+              <select
+                name="difficulty"
+                value={activity.difficulty}
+                onChange={handleChange}
+              >
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+              {errors.difficulty && <p>{errors.difficulty}</p>}
+            </div>
+
+            <div>
+              <label className={style.labels}>Duration (in hours):</label>
+              <br />
+              <input
+                type="time"
+                name="duration"
+                value={activity.duration}
+                onChange={handleChange}
+              />
+              {errors.duration && <p>{errors.duration}</p>}
+            </div>
+
+            <div>
+              <label className={style.labels}>Season:</label>
+              <br />
+              <select
+                name="season"
+                value={activity.season}
+                onChange={handleChange}
+              >
+                <option value="null">Default</option>
+                <option value="summer">Summer</option>
+                <option value="autumn">Autumn</option>
+                <option value="winter">Winter</option>
+                <option value="spring">Spring</option>
+              </select>
+              {errors.season && <p>{errors.season}</p>}
+            </div>
+
+            <div>
+              <label className={style.labels}>Countries:</label>
+              <br />
+              <div className={style.selectContainer}>
+                <select
+                  multiple
+                  value={activity.countries}
+                  onChange={handleCountryChange}
+                >
+                  {countries
+                    .slice()
+                    .sort((a, b) => a.name.localeCompare(b.name))
+                    .map((country) => (
+                      <option key={country.id} value={country.id}>
+                        {country.name}
+                      </option>
+                    ))}
+                </select>
+                {errors.countries && <p>{errors.countries}</p>}
+              </div>
+            </div>
+          </div>
+          <button
+            type="submit"
+            onClick={handleSubmit}
+            className={style.createButton}
+          >
+            CREATE
+          </button>
         </div>
-        <div className={style.allLabels}>
-          <div>
-            <label>Name:</label>
-            <br />
-            <input
-              placeholder="Name activity"
-              type="text"
-              name="name"
-              value={activity.name}
-              onChange={handleChange}
-              className={style.namePlaceHolder}
-            />
-            {errors.name !== "" && <p>{errors.name}</p>}
-          </div>
-
-          <div>
-            <label>Difficulty:</label>
-            <br />
-            <select
-              name="difficulty"
-              value={activity.difficulty}
-              onChange={handleChange}
-            >
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select>
-            {errors.difficulty && <p>{errors.difficulty}</p>}
-          </div>
-
-          <div>
-            <label>Duration (in hours):</label>
-            <br />
-            <input
-              type="time"
-              name="duration"
-              value={activity.duration}
-              onChange={handleChange}
-            />
-            {errors.duration && <p>{errors.duration}</p>}
-          </div>
-
-          <div>
-            <label>Season:</label>
-            <br />
-            <select
-              name="season"
-              value={activity.season}
-              onChange={handleChange}
-            >
-              <option value="null">Default</option>
-              <option value="summer">Summer</option>
-              <option value="autumn">Autumn</option>
-              <option value="winter">Winter</option>
-              <option value="spring">Spring</option>
-            </select>
-            {errors.season && <p>{errors.season}</p>}
-          </div>
-
-          <div>
-            <label>Countries:</label>
-            <br />
-            <select
-              multiple
-              value={activity.countries}
-              onChange={handleCountryChange}
-            >
-              {countries
-                .slice()
-                .sort((a, b) => a.name.localeCompare(b.name))
-                .map((country) => (
-                  <option key={country.id} value={country.id}>
-                    {country.name}
-                  </option>
-                ))}
-            </select>
-            {errors.countries && <p>{errors.countries}</p>}
-          </div>
-        </div>
-        <button
-          type="submit"
-          onClick={handleSubmit}
-          className={style.createButton}
-        >
-          CREATE
-        </button>
       </form>
       <div className={style.prevCardContainer}>
         <h2>PREVIEW</h2>

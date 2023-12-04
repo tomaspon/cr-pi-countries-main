@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getCountryById } from "../../redux/actions/actions";
 import { formatNumber } from "../../generalFunctions/generalFunctions";
-import ActivityCard from "../card/ActivityCard";
 import style from "./Detail.module.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -49,22 +48,27 @@ const Detail = (props) => {
   }, [props.country]);
 
   return (
-    <div className={`${style.detailContainer} ${style.contentOrder}`}>
-      <Link to="/home" className={style.homeButton}>
+    <div>
+      <Link
+        to="/home"
+        className={style.homeButton}
+        style={{ color: "black", marginLeft: "4px" }}
+      >
         ↩Go home
       </Link>
-      <div>
+      <div className={style.contentOrder}>
         <div>
           {error ? (
             <div>
               <h2>Country not found</h2>
             </div>
           ) : (
-            <div className={`${style.countryDetails} ${style.contentOrder}`}>
+            <div className={style.countryDetails}>
               {countryDetails ? (
                 <div className={style.countryDetailsContent}>
-                  <h2>{countryDetails.name}</h2>
+                  <h2>COUNTRY DETAILS</h2>
                   <img src={countryDetails.flag_image} alt="" />
+                  <h2>{countryDetails.name}</h2>
                   <p>Capital: {countryDetails.capital}</p>
                   <p>Subregion: {countryDetails.subregion}</p>
                   <p>Area: {formatNumber(countryDetails.area)} km²</p>
@@ -76,6 +80,7 @@ const Detail = (props) => {
             </div>
           )}
         </div>
+        <hr />
         <div>
           {countryDetails && countryDetails.Activities.length >= 1 ? (
             <div className={style.activityContainer}>
@@ -83,7 +88,8 @@ const Detail = (props) => {
               {countryDetails &&
                 countryDetails.Activities.map((activity) => (
                   <div key={activity.id}>
-                    <h3>{activity.name}</h3>
+                    <h3>Actividad:</h3>
+                    <h4>{activity.name}</h4>
                     <p>Difficulty: {activity.difficulty}</p>
                     <p>Duration: {activity.duration} hours</p>
                     <p>Season: {activity.season}</p>
@@ -93,9 +99,7 @@ const Detail = (props) => {
           ) : (
             <div>
               {countryActivities.map((activity) => (
-                <div key={activity.id}>
-                  <ActivityCard />
-                </div>
+                <div key={activity.id}></div>
               ))}
             </div>
           )}

@@ -58,6 +58,7 @@
 .landingContainer .doubleButton:hover {
   box-shadow: 2px 3px 6px blueviolet;
   background: blueviolet;
+  transition: 0.3s;
   border: solid 1px blueviolet;
   color: white;
 }
