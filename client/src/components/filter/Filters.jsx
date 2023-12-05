@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { getActivities } from "../../redux/actions/actions";
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import style from "./Filters.module.css";
 
 const Filters = ({
@@ -10,8 +9,7 @@ const Filters = ({
   onOrder,
   onOrderByPopulation,
 }) => {
-  const dispatch = useDispatch();
-  const activities = useSelector((state) => state.activities);
+  const activities = useSelector((state) => state.countryActivities);
   const [name, setName] = useState("");
 
   const handleChange = (event) => {
@@ -41,16 +39,24 @@ const Filters = ({
   };
 
   const handleFilterActivities = (event) => {
-    setCurrentPage(1);
+    // Limpiar otros filtros al seleccionar una actividad
+    document.getElementById("order").selectedIndex = 0;
+    document.getElementById("orderPopulation").selectedIndex = 0;
+    document.getElementById("filterContinent").selectedIndex = 0;
+
+    // Llamar a la acción para filtrar por actividad
     onFilterActivities(event.target.value);
   };
 
-  useEffect(() => {
-    // Obtener las actividades al montar el componente
-    dispatch(getActivities());
-  }, [dispatch]);
-
-  const activityOptions = activities.map((activity) => activity.name);
+  const activityOptions = Array.from(
+    new Set(
+      Array.isArray(activities)
+        ? activities.flatMap((country) =>
+            country.Activities.map((activity) => activity.name)
+          )
+        : []
+    )
+  );
 
   return (
     <nav className={style.filterContainer}>
@@ -104,7 +110,6 @@ const Filters = ({
             disabled={false}
           >
             <option value="none" hidden>
-              {" "}
               Order by population
             </option>
             <option value="mayor">Most</option>
@@ -117,6 +122,7 @@ const Filters = ({
             <option value="none" hidden>
               Filter by activity
             </option>
+            <option value="all">All activities</option>
             {activityOptions.map((activity, index) => (
               <option key={index} value={activity}>
                 {activity}

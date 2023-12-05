@@ -48,7 +48,7 @@ const reducer = (state = initialState, action) => {
 
     case FILTER_CONTINENTS:
       let filtered = state.countries;
-      if (action.payload !== "All") {
+      if (action.payload !== "all") {
         filtered = state.countries.filter((country) => {
           return country.continents.includes(action.payload);
         });
@@ -61,16 +61,15 @@ const reducer = (state = initialState, action) => {
     case ACTIVITIES:
       return {
         ...state,
-        activities: action.payload,
+        countryActivities: action.payload,
       };
 
     case FILTER_ACTIVITIES:
       let filteredActivities = state.countryActivities;
-
-      if (action.payload && action.payload.length > 0) {
+      if (action.payload !== "all") {
         filteredActivities = state.countryActivities.filter((country) =>
-          country.Activities.some((activity) =>
-            action.payload.includes(activity.name)
+          country.Activities.some(
+            (activity) => activity.name === action.payload
           )
         );
       }
