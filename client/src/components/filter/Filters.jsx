@@ -41,6 +41,7 @@ const Filters = ({
   };
 
   const handleFilterActivities = (event) => {
+    setCurrentPage(1);
     onFilterActivities(event.target.value);
   };
 
@@ -116,7 +117,6 @@ const Filters = ({
             <option value="none" hidden>
               Filter by activity
             </option>
-            <option value="All">All activities</option>
             {activityOptions.map((activity, index) => (
               <option key={index} value={activity}>
                 {activity}

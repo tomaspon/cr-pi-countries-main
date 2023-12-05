@@ -3,7 +3,7 @@ const getCountries = require("../controllers/getCountries");
 const getCountryId = require("../controllers/getCountryId");
 const getCountryName = require("../controllers/getCountryName");
 const { postActivityHand } = require("../handlers/postActivityHand");
-const getActivities = require("../controllers/getActivities");
+const { getActivities } = require("../controllers/getActivities");
 
 const router = Router();
 
@@ -25,7 +25,6 @@ router.get("/countries", async (req, res) => {
     res.status(500).json({ error: "No se pudo cargar la información" });
   }
 });
-
 router.get("/countries/:idPais", getCountryId);
 router.get("/activities", getActivities);
 router.post("/activities", postActivityHand);

@@ -30,6 +30,7 @@ export const getActivities = () => {
   return async (dispatch) => {
     try {
       const response = await axios.get("http://localhost:3001/activities");
+      console.log("Activities:", response.data);
       dispatch({ type: ACTIVITIES, payload: response.data });
     } catch (error) {
       console.error("Error fetching activities:", error);
@@ -38,9 +39,16 @@ export const getActivities = () => {
 };
 
 export const filterActivities = (activity) => {
-  return {
-    type: FILTER_ACTIVITIES,
-    payload: activity,
+  return async (dispatch) => {
+    try {
+      const response = await axios.get(
+        `http://localhost:3001/activities/${activity}`
+      );
+      console.log(`Filtered activities for ${activity}:`, response.data);
+      dispatch({ type: FILTER_ACTIVITIES, payload: response.data });
+    } catch (error) {
+      console.error(`Error filtering activities for ${activity}:`, error);
+    }
   };
 };
 

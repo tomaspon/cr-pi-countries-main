@@ -66,10 +66,11 @@ const reducer = (state = initialState, action) => {
 
     case FILTER_ACTIVITIES:
       let filteredActivities = state.countryActivities;
-      if (action.payload !== "All") {
+
+      if (action.payload && action.payload.length > 0) {
         filteredActivities = state.countryActivities.filter((country) =>
-          country.Activities.some(
-            (activity) => activity.name === action.payload
+          country.Activities.some((activity) =>
+            action.payload.includes(activity.name)
           )
         );
       }

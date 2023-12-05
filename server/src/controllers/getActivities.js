@@ -1,15 +1,20 @@
-const { Country, Activity } = require("../db");
+const { Activity, Country } = require("../db");
 
-const getActivities = async () => {
+const getActivities = async (req, res, next) => {
   try {
-    const activities = await Country.findAll({
-      include: Activity, // Asociación directa
+    const activities = await Activity.findAll({
+      include: {
+        model: Country,
+        attributes: ["id", "name"],
+        through: { attributes: [] },
+      },
     });
-
-    return activities;
+    res.json(activities);
   } catch (error) {
-    throw error; // Relanza el error original
+    next(error);
   }
 };
 
-module.exports = getActivities;
+module.exports = {
+  getActivities,
+};

@@ -13,7 +13,6 @@ const Detail = (props) => {
   const countryDetails = useSelector((state) => state.countryDetails);
   const [error, setError] = useState(false);
   const [countryActivities, setCountryActivities] = useState([]);
-  console.log("COUNTRYDETAILS", countryDetails);
 
   useEffect(() => {
     dispatch(getCountryById(params?.id))
@@ -47,7 +46,6 @@ const Detail = (props) => {
     countryActivities();
   }, [props.country]);
 
-  console.log("ESTO VIENE DE ACTIVITY PROPIEDAD", countryActivities);
   return (
     <div>
       <Link

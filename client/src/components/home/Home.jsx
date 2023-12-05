@@ -41,11 +41,10 @@ const Home = () => {
     dispatch(filterContinents(event));
   };
 
-  const handleFilterActivities = (event) => {
+  const handleFilterActivities = (activity) => {
     setCurrentPage(1);
-    dispatch(filterActivities(event));
+    dispatch(filterActivities(activity));
   };
-
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);
   };
