@@ -26,17 +26,21 @@ export const getCountries = () => {
   };
 };
 
-export const getActivities = (actividad) => {
+export const getActivities = () => {
   return async (dispatch) => {
     try {
-      const response = await axios.get(`http://localhost:3001/activities`);
-      dispatch({
-        type: ACTIVITIES,
-        payload: response.data,
-      });
+      const response = await axios.get("http://localhost:3001/activities");
+      dispatch({ type: ACTIVITIES, payload: response.data });
     } catch (error) {
-      throw Error(error.message);
+      console.error("Error fetching activities:", error);
     }
+  };
+};
+
+export const filterActivities = (activity) => {
+  return {
+    type: FILTER_ACTIVITIES,
+    payload: activity,
   };
 };
 
@@ -48,7 +52,6 @@ export const getCountryById = (id) => {
         type: SEARCH_BY_ID,
         payload: response.data,
       });
-      // Retornar el país para que esté disponible en el componente
       return response.data;
     } catch (error) {
       throw Error(error.message);
@@ -77,7 +80,7 @@ export const createActivity = (activityData) => {
     try {
       // Realiza la solicitud POST al servidor
       const response = await axios.post(
-        "http://localhost:3001/create-activity", // Ajusta la ruta según tu backend
+        "http://localhost:3001/activities", // Ajusta la ruta según tu backend
         activityData
       );
 
@@ -97,13 +100,6 @@ export const filterContinents = (continent) => {
   return {
     type: FILTER_CONTINENTS,
     payload: continent,
-  };
-};
-
-export const filterActivities = (activity) => {
-  return {
-    type: FILTER_ACTIVITIES,
-    payload: activity,
   };
 };
 

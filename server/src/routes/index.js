@@ -27,7 +27,7 @@ router.get("/countries", async (req, res) => {
 });
 
 router.get("/countries/:idPais", getCountryId);
-router.get("/create-activity", getActivities);
-router.post("/create-activity", postActivityHand);
+router.get("/activities", getActivities);
+router.post("/activities", postActivityHand);
 
 module.exports = router;

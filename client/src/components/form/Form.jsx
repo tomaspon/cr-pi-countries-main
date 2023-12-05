@@ -167,7 +167,7 @@ const Form = () => {
         </div>
       </form>
       <div className={style.prevCardContainer}>
-        <h2>PREVIEW</h2>
+        <h2>ACTIVITY PREVIEW🧪</h2>
         <div className={style.prevCardTexts}>
           <p>Name: {activity.name}</p>
           <p>Difficulty: {activity.difficulty}</p>

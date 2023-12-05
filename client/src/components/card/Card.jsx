@@ -25,23 +25,23 @@ const Card = ({
         <div className={style.cardContent}>
           <h2 style={{ color: "black" }}>{name}</h2>
           <p style={{ color: "black", fontWeight: "400" }}>
-            Continent: {continents}
+            <b>Continent:</b> {continents}
           </p>
           <p style={{ color: "black", fontWeight: "400" }}>
-            Capital: {capital}
+            <b>Capital:</b> {capital}
           </p>
           {subregion && (
             <p style={{ color: "black", fontWeight: "400" }}>
-              Subregion: {subregion}
+              <b>Subregion:</b> {subregion}
             </p>
           )}
           {area && (
             <p style={{ color: "black", fontWeight: "400" }}>
-              Area: {formatNumber(area)} km²
+              <b>Area:</b> {formatNumber(area)} km²
             </p>
           )}
           <p style={{ color: "black", fontWeight: "400" }}>
-            Population: {formatNumber(population)}
+            <b>Population:</b> {formatNumber(population)}
           </p>
           <div>
             <Link to={`/detail/${id}`}>

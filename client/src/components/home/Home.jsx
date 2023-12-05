@@ -46,10 +46,16 @@ const Home = () => {
     dispatch(filterActivities(event));
   };
 
+  const handlePageChange = (newPage) => {
+    setCurrentPage(newPage);
+  };
+
   useEffect(() => {
     dispatch(getCountries());
     dispatch(getActivities());
   }, [dispatch]);
+
+  const totalPages = Math.ceil(filteredCountries.length / cardsPerPage);
 
   return (
     <div style={{ background: `url(${fondoHome})`, backgroundSize: "cover" }}>
@@ -66,22 +72,21 @@ const Home = () => {
         <Cards
           countries={filteredCountries}
           currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
+          onPageChange={handlePageChange}
           cardsPerPage={cardsPerPage}
         />
         <div className={style.sPaginated}>
           <button
-            onClick={() => setCurrentPage(currentPage - 1)}
+            onClick={() => handlePageChange(currentPage - 1)}
             disabled={currentPage === 1}
           >
             ⬅
           </button>
           <span>
-            Page {currentPage} of{" "}
-            {Math.ceil(filteredCountries.length / cardsPerPage)}
+            Page {currentPage} of {totalPages}
           </span>
           <button
-            onClick={() => setCurrentPage(currentPage + 1)}
+            onClick={() => handlePageChange(currentPage + 1)}
             disabled={currentPage * cardsPerPage >= filteredCountries.length}
           >
             ➡

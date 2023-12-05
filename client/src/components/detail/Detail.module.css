@@ -12,6 +12,16 @@
   top: 80px;
 }
 
+.countryDetails h2 {
+  width: 406px;
+  margin: 0 auto;
+  position: relative;
+  top: 18px;
+  color: white;
+  background-color: blueviolet;
+  border-radius: 6px;
+}
+
 .countryDetails img {
   display: flex;
   margin: 0 auto;
@@ -19,11 +29,17 @@
   box-shadow: black 0px 1px 5px;
 }
 
-.countryDetailsContent h2 {
+.countryDetailsContent {
+  top: 40px;
+  position: relative;
+}
+
+.countryDetailsContent h3 {
   text-align: center;
   font-size: 30px;
   margin: 0 auto;
-  font-weight: 400;
+  font-weight: 600;
+  color: blueviolet;
   margin-bottom: 20px;
 }
 
@@ -52,7 +68,7 @@
 .individualActivity {
   background-color: white;
   width: 280px;
-  height: 320px;
+  height: 280px;
   color: black;
   border-radius: 6px;
   border: solid 1px blueviolet;
@@ -60,10 +76,11 @@
   justify-content: center;
 }
 
-.individualActivity h3 {
+.individualActivity h4 {
   text-align: center;
   position: relative;
-  bottom: 10px;
+  top: 20px;
+  margin: 0 auto;
   font-weight: 500;
 }
 
@@ -82,6 +99,9 @@
 }
 
 .activityContainer h2 {
+  background-color: blueviolet;
+  border-radius: 6px;
+  color: white;
   font-size: 24px;
   text-align: center;
   margin: 18px;
@@ -107,6 +127,8 @@
 
 .countryDetails img {
   margin-top: 20px;
+  width: 320px;
+  height: 200px;
 }
 
 .contentOrder {

@@ -13,8 +13,8 @@ import {
 const initialState = {
   countries: [],
   activities: [],
-  filteredCountries: [],
   countryActivities: [],
+  filteredCountries: [],
   countryDetails: null,
 };
 
@@ -25,12 +25,6 @@ const reducer = (state = initialState, action) => {
         ...state,
         countries: action.payload,
         filteredCountries: action.payload,
-      };
-
-    case ACTIVITIES:
-      return {
-        ...state,
-        countryActivities: action.payload,
       };
 
     case SEARCH_BY_ID:
@@ -54,7 +48,7 @@ const reducer = (state = initialState, action) => {
 
     case FILTER_CONTINENTS:
       let filtered = state.countries;
-      if (action.payload !== "Todos") {
+      if (action.payload !== "All") {
         filtered = state.countries.filter((country) => {
           return country.continents.includes(action.payload);
         });
@@ -64,9 +58,15 @@ const reducer = (state = initialState, action) => {
         filteredCountries: filtered,
       };
 
+    case ACTIVITIES:
+      return {
+        ...state,
+        activities: action.payload,
+      };
+
     case FILTER_ACTIVITIES:
       let filteredActivities = state.countryActivities;
-      if (action.payload !== "Todos") {
+      if (action.payload !== "All") {
         filteredActivities = state.countryActivities.filter((country) =>
           country.Activities.some(
             (activity) => activity.name === action.payload

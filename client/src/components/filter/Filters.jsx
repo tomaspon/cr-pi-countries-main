@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { getActivities } from "../../redux/actions/actions";
 import style from "./Filters.module.css";
 
 const Filters = ({
@@ -9,7 +10,8 @@ const Filters = ({
   onOrder,
   onOrderByPopulation,
 }) => {
-  const activities = useSelector((state) => state.countryActivities);
+  const dispatch = useDispatch();
+  const activities = useSelector((state) => state.activities);
   const [name, setName] = useState("");
 
   const handleChange = (event) => {
@@ -29,33 +31,25 @@ const Filters = ({
   const handleOrder = (event) => {
     onOrder(event.target.value);
   };
+
   const handleOrderByPopulation = (event) => {
     onOrderByPopulation(event.target.value);
   };
 
   const handleFilter = (event) => {
-    document.getElementById("filterActivity").selectedIndex = 0;
-    document.getElementById("order").selectedIndex = 0;
-    document.getElementById("orderPopulation").selectedIndex = 0;
     onFilter(event.target.value);
   };
 
   const handleFilterActivities = (event) => {
-    document.getElementById("order").selectedIndex = 0;
-    document.getElementById("orderPopulation").selectedIndex = 0;
-    document.getElementById("filterContinent").selectedIndex = 0;
     onFilterActivities(event.target.value);
   };
 
-  const activityOptions = Array.from(
-    new Set(
-      Array.isArray(activities)
-        ? activities.flatMap((country) =>
-            country.Activities.map((activity) => activity.name)
-          )
-        : []
-    )
-  );
+  useEffect(() => {
+    // Obtener las actividades al montar el componente
+    dispatch(getActivities());
+  }, [dispatch]);
+
+  const activityOptions = activities.map((activity) => activity.name);
 
   return (
     <nav className={style.filterContainer}>
@@ -70,7 +64,10 @@ const Filters = ({
             className={style.searchBar}
           />
           <button onClick={handleSearch} className={style.searchButton}>
-            <img src="https://icones.pro/wp-content/uploads/2021/06/icone-loupe-noir.png"></img>
+            <img
+              src="https://icones.pro/wp-content/uploads/2021/06/icone-loupe-noir.png"
+              alt="Search icon"
+            />
           </button>
         </li>
         <li>
@@ -78,7 +75,7 @@ const Filters = ({
             <option value="none" hidden>
               Filter by continent
             </option>
-            <option value="All ">All continents</option>
+            <option value="all">All continents</option>
             <option value="Africa">Africa</option>
             <option value="Antarctica">Antarctica</option>
             <option value="Asia">Asia</option>
@@ -119,7 +116,7 @@ const Filters = ({
             <option value="none" hidden>
               Filter by activity
             </option>
-            <option value="All">All</option>
+            <option value="All">All activities</option>
             {activityOptions.map((activity, index) => (
               <option key={index} value={activity}>
                 {activity}

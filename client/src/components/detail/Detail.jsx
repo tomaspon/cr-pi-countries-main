@@ -47,6 +47,7 @@ const Detail = (props) => {
     countryActivities();
   }, [props.country]);
 
+  console.log("ESTO VIENE DE ACTIVITY PROPIEDAD", countryActivities);
   return (
     <div>
       <Link
@@ -67,12 +68,20 @@ const Detail = (props) => {
               <h2>COUNTRY DETAILS</h2>
               {countryDetails ? (
                 <div className={style.countryDetailsContent}>
-                  <h2>{countryDetails.name}</h2>
+                  <h3>{countryDetails.name}</h3>
                   <img src={countryDetails.flag_image} alt="" />
-                  <p>Capital: {countryDetails.capital}</p>
-                  <p>Subregion: {countryDetails.subregion}</p>
-                  <p>Area: {formatNumber(countryDetails.area)} km²</p>
-                  <p>Population: {formatNumber(countryDetails.population)}</p>
+                  <p>
+                    <b>Capital:</b> {countryDetails.capital}
+                  </p>
+                  <p>
+                    <b>Subregion:</b> {countryDetails.subregion}
+                  </p>
+                  <p>
+                    <b>Area:</b> {formatNumber(countryDetails.area)} km²
+                  </p>
+                  <p>
+                    <b>Population:</b> {formatNumber(countryDetails.population)}
+                  </p>
                 </div>
               ) : (
                 <p>Loading...</p>
