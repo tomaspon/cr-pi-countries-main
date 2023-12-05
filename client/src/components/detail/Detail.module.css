@@ -13,7 +13,26 @@
 }
 
 .countryDetails img {
+  display: flex;
+  margin: 0 auto;
+  text-align: center;
   box-shadow: black 0px 1px 5px;
+}
+
+.countryDetailsContent h2 {
+  text-align: center;
+  font-size: 30px;
+  margin: 0 auto;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.countryDetailsContent p {
+  text-align: start;
+  font-weight: 400;
+  font-size: 18px;
+  margin: 22px;
+  margin-left: 62px;
 }
 
 .homeButton {
@@ -21,16 +40,39 @@
 }
 
 .contentOrder hr {
+  display: flex;
+  position: relative;
+  top: 180px;
+  height: 200px;
+  text-align: center;
   margin: 100px;
-  border: none;
+  border: solid 0.1px blueviolet;
+}
+
+.individualActivity {
+  background-color: white;
+  width: 280px;
+  height: 320px;
+  color: black;
+  border-radius: 6px;
+  border: solid 1px blueviolet;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.individualActivity h3 {
+  text-align: center;
+  position: relative;
+  bottom: 10px;
+  font-weight: 500;
 }
 
 .activityContainer {
   position: relative;
-  top: 55px;
+  top: 80px;
   width: 440px;
-  height: 500px;
-  background-color: rgba(128, 128, 128, 0.258);
+  height: 580px;
+  background-color: rgba(255, 255, 255, 0.258);
   color: black;
   backdrop-filter: blur(2px);
   border: solid 2px blueviolet;
@@ -40,9 +82,10 @@
 }
 
 .activityContainer h2 {
-  font-size: 30px;
+  font-size: 24px;
   text-align: center;
-  margin: 30px;
+  margin: 18px;
+  margin-bottom: 42px;
 }
 
 .activityContainer h3 {
@@ -51,10 +94,10 @@
 }
 
 .activityContainer h4 {
-  font-size: 22px;
-  font-weight: 400;
-  margin-top: -20px;
-  margin-left: 40px;
+  font-size: 28px;
+  font-weight: 700;
+  color: blueviolet;
+  text-align: center;
 }
 
 .activityContainer p {

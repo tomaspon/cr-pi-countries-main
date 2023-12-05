@@ -96,6 +96,7 @@ const Form = () => {
                 value={activity.difficulty}
                 onChange={handleChange}
               >
+                <option value="">Level</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -125,7 +126,7 @@ const Form = () => {
                 value={activity.season}
                 onChange={handleChange}
               >
-                <option value="null">Default</option>
+                <option value="">Select</option>
                 <option value="summer">Summer</option>
                 <option value="autumn">Autumn</option>
                 <option value="winter">Winter</option>
@@ -161,7 +162,7 @@ const Form = () => {
             onClick={handleSubmit}
             className={style.createButton}
           >
-            CREATE
+            ¡CREATE!
           </button>
         </div>
       </form>

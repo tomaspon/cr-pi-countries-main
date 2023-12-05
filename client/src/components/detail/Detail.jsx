@@ -64,11 +64,11 @@ const Detail = (props) => {
             </div>
           ) : (
             <div className={style.countryDetails}>
+              <h2>COUNTRY DETAILS</h2>
               {countryDetails ? (
                 <div className={style.countryDetailsContent}>
-                  <h2>COUNTRY DETAILS</h2>
-                  <img src={countryDetails.flag_image} alt="" />
                   <h2>{countryDetails.name}</h2>
+                  <img src={countryDetails.flag_image} alt="" />
                   <p>Capital: {countryDetails.capital}</p>
                   <p>Subregion: {countryDetails.subregion}</p>
                   <p>Area: {formatNumber(countryDetails.area)} km²</p>
@@ -84,15 +84,20 @@ const Detail = (props) => {
         <div>
           {countryDetails && countryDetails.Activities.length >= 1 ? (
             <div className={style.activityContainer}>
-              <h2>Country activities:</h2>
+              <h2>⬇ COUNTRY ACTIVITIES ⬇</h2>
               {countryDetails &&
                 countryDetails.Activities.map((activity) => (
-                  <div key={activity.id}>
-                    <h3>Actividad:</h3>
+                  <div key={activity.id} className={style.individualActivity}>
                     <h4>{activity.name}</h4>
-                    <p>Difficulty: {activity.difficulty}</p>
-                    <p>Duration: {activity.duration} hours</p>
-                    <p>Season: {activity.season}</p>
+                    <p>
+                      <b>Difficulty:</b> {activity.difficulty}
+                    </p>
+                    <p>
+                      <b>Duration:</b> {activity.duration} hours
+                    </p>
+                    <p>
+                      <b>Season:</b> {activity.season}
+                    </p>
                   </div>
                 ))}
             </div>
