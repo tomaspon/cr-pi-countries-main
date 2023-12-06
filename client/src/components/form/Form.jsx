@@ -65,13 +65,23 @@ const Form = () => {
 
   return (
     <div className={style.container}>
-      <Link to="/home" className={style.homeButton} style={{ color: "black" }}>
+      <Link
+        to="/home"
+        className={style.homeButton}
+        style={{ color: "black" }}
+        title="Go home"
+      >
         ↩Go home
       </Link>
       <form onSubmit={handleSubmit} className={style.formContainer}>
         <div className={style.formContent}>
           <div>
-            <h2 className={style.createTitle}>CREATE ACTIVITY</h2>
+            <h2
+              className={style.createTitle}
+              style={{ fontWeight: "700", fontSize: "24px" }}
+            >
+              🎲 CREATE ACTIVITY 🎲
+            </h2>
           </div>
           <div className={style.allLabels}>
             <div>
@@ -161,20 +171,38 @@ const Form = () => {
             type="submit"
             onClick={handleSubmit}
             className={style.createButton}
+            title="Create activity"
           >
             ¡CREATE!
           </button>
         </div>
       </form>
+      <hr
+        style={{
+          margin: "20px",
+          height: "200px",
+          position: "relative",
+          top: "200px",
+          border: "solid 1px blueviolet",
+        }}
+      />
       <div className={style.prevCardContainer}>
-        <h2>ACTIVITY PREVIEW🧪</h2>
+        <h2>🧪 ACTIVITY PREVIEW 🧪</h2>
         <div className={style.prevCardTexts}>
-          <p>Name: {activity.name}</p>
-          <p>Difficulty: {activity.difficulty}</p>
-          <p>Duration: {activity.duration}</p>
-          <p>Season: {activity.season}</p>
           <p>
-            Countries: <br />
+            <b>Name:</b> {activity.name}
+          </p>
+          <p>
+            <b>Difficulty:</b> {activity.difficulty}
+          </p>
+          <p>
+            <b>Duration:</b> {activity.duration}
+          </p>
+          <p>
+            <b>Season:</b> {activity.season}
+          </p>
+          <p>
+            <b>Countries:</b> <br />
             {activity.countries.join(", ")}
           </p>
         </div>

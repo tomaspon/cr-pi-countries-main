@@ -11,6 +11,11 @@ const Filters = ({
 }) => {
   const activities = useSelector((state) => state.countryActivities);
   const [name, setName] = useState("");
+  const [selectedContinent, setSelectedContinent] = useState("none");
+  const [selectedOrder, setSelectedOrder] = useState("none");
+  const [selectedOrderPopulation, setSelectedOrderPopulation] =
+    useState("none");
+  const [selectedActivity, setSelectedActivity] = useState("none");
 
   const handleChange = (event) => {
     setName(event.target.value);
@@ -26,29 +31,48 @@ const Filters = ({
     }
   };
 
+  const handleFilter = (event) => {
+    setSelectedContinent(event.target.value);
+    onFilter(event.target.value);
+  };
+
   const handleOrder = (event) => {
+    setSelectedOrder(event.target.value);
     onOrder(event.target.value);
   };
 
   const handleOrderByPopulation = (event) => {
+    setSelectedOrderPopulation(event.target.value);
     onOrderByPopulation(event.target.value);
   };
 
-  const handleFilter = (event) => {
-    onFilter(event.target.value);
-  };
-
   const handleFilterActivities = (event) => {
+    setSelectedActivity(event.target.value);
+
     // Limpiar otros filtros al seleccionar una actividad
-    document.getElementById("order").selectedIndex = 0;
-    document.getElementById("orderPopulation").selectedIndex = 0;
-    document.getElementById("filterContinent").selectedIndex = 0;
+    setSelectedOrder("none");
+    setSelectedOrderPopulation("none");
+    setSelectedContinent("none");
 
     // Llamar a la acción para filtrar por actividad
     onFilterActivities(event.target.value);
   };
 
-  const activityOptions = Array.from(
+  const handleResetFilters = () => {
+    setName("");
+    setSelectedContinent("all"); // Cambiado a "all" para mostrar todos los continentes
+    setSelectedOrder("none");
+    setSelectedOrderPopulation("none");
+    setSelectedActivity("all"); // Cambiado a "all" para mostrar todas las actividades
+
+    // Llamar a las acciones correspondientes para restablecer los filtros
+    onFilter("all"); // Enviar "all" como valor al restablecer el filtro de continentes
+    onOrder("none");
+    onOrderByPopulation("none");
+    onFilterActivities("all"); // Enviar "all" como valor al restablecer el filtro de actividades
+  };
+
+  const activityNames = Array.from(
     new Set(
       Array.isArray(activities)
         ? activities.flatMap((country) =>
@@ -70,7 +94,11 @@ const Filters = ({
             onKeyPress={handleKeyPress}
             className={style.searchBar}
           />
-          <button onClick={handleSearch} className={style.searchButton}>
+          <button
+            onClick={handleSearch}
+            className={style.searchButton}
+            title="Search"
+          >
             <img
               src="https://icones.pro/wp-content/uploads/2021/06/icone-loupe-noir.png"
               alt="Search icon"
@@ -123,12 +151,22 @@ const Filters = ({
               Filter by activity
             </option>
             <option value="all">All activities</option>
-            {activityOptions.map((activity, index) => (
+            {activityNames.map((activity, index) => (
               <option key={index} value={activity}>
                 {activity}
               </option>
             ))}
           </select>
+        </li>
+        <li>
+          {" "}
+          <button
+            onClick={handleResetFilters}
+            className={style.clearButton}
+            title="Clear filters"
+          >
+            ✖
+          </button>
         </li>
       </ul>
     </nav>

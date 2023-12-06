@@ -1,21 +1,20 @@
-.sPaginated{
-    background-color: white;
-    color: black;
-    width: 100%;
+.sPaginated {
+  background-color: white;
+  color: black;
+  width: 100%;
 }
 
-.sPaginated button{
-    background-color: black;
-    color: white;
-    border: solid 1px black;
-    border-radius: 4px;
-    width: 30px;
-    height: 24px;
-    margin: 8px;
-    cursor: pointer;
-    display: inline-flex;
+.sPaginated button {
+  background-color: black;
+  color: white;
+  border: solid 1px black;
+  border-radius: 4px;
+  width: 30px;
+  height: 24px;
+  margin: 8px;
+  cursor: pointer;
 }
 
-body{
-    display: block;
+body {
+  display: block;
 }

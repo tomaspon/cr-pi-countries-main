@@ -20,7 +20,7 @@ const Card = ({
 
   return (
     <div onClick={handleClick} className={style.cardContainer}>
-      <Link to={`/detail/${id}`}>
+      <Link to={`/detail/${id}`} title="View details">
         <img src={flag_image} alt={name} />
         <div className={style.cardContent}>
           <h2 style={{ color: "black" }}>{name}</h2>
@@ -43,21 +43,18 @@ const Card = ({
           <p style={{ color: "black", fontWeight: "400" }}>
             <b>Population:</b> {formatNumber(population)}
           </p>
-          <div>
-            <Link to={`/detail/${id}`}>
-              <h5
-                style={{
-                  fontSize: "12px",
-                  color: "blueviolet",
-                  fontWeight: "600",
-                  margin: "0 auto",
-                  textAlign: "center",
-                }}
-              >
-                Click in the card to show details
-              </h5>
-            </Link>
-          </div>
+          <h5
+            className={style.showActivities}
+            style={{
+              fontSize: "12px",
+              color: "blueviolet",
+              fontWeight: "600",
+              margin: "0 auto",
+              textAlign: "center",
+            }}
+          >
+            Click in the card to show details
+          </h5>
         </div>
       </Link>
     </div>

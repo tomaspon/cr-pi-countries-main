@@ -17,7 +17,7 @@ import fondoHome from "../../assets/76827.jpg";
 
 const Home = () => {
   const dispatch = useDispatch();
-  const [selectedActivity, setSelectedActivity] = useState("all");
+  const [selectedActivity, setSelectedActivity] = useState("none");
   const filteredCountries = useSelector((state) => state.filteredCountries);
   const [currentPage, setCurrentPage] = useState(1);
   const cardsPerPage = 10;
@@ -51,15 +51,6 @@ const Home = () => {
     dispatch(filterActivities(activity));
   };
 
-  const handleShowAllCountries = () => {
-    setCurrentPage(1);
-    setSelectedActivity("none");
-    document.getElementById("order").selectedIndex = 0;
-    document.getElementById("orderPopulation").selectedIndex = 0;
-    document.getElementById("filterContinent").selectedIndex = 0;
-    document.getElementById("filterActivity").selectedIndex = 0;
-  };
-
   useEffect(() => {
     dispatch(getCountries(selectedActivity));
     dispatch(getActivities());
@@ -88,6 +79,7 @@ const Home = () => {
           <button
             onClick={() => setCurrentPage(currentPage - 1)}
             disabled={currentPage === 1}
+            title="Previus page"
           >
             ⬅
           </button>
@@ -98,16 +90,11 @@ const Home = () => {
           <button
             onClick={() => setCurrentPage(currentPage + 1)}
             disabled={currentPage * cardsPerPage >= filteredCountries.length}
+            title="Next page"
           >
             ➡
           </button>
-          {/* ... botones de paginación */}
         </div>
-        {selectedActivity !== "none" && (
-          <button onClick={handleShowAllCountries}>
-            Mostrar Todos los Países
-          </button>
-        )}
       </div>
     </div>
   );

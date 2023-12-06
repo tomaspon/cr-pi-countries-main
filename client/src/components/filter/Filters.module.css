@@ -1,69 +1,90 @@
-
-.filterContainer{
-    display: block;
-    width: 90%;
-    margin: 0 auto;
-    text-align: start;
-    position: relative;
-    top: 20px;
+.filterContainer {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+  text-align: start;
+  position: relative;
+  top: 14px;
+  left: 4px;
 }
 
-.filterContainer li{
-    display: inline-block;
-    list-style:none
+.filterContainer li {
+  display: inline-block;
+  list-style: none;
 }
 
-.filterContainer select{
-    background-color: white;
-    color: gray;
-    margin: 16px;
-    padding: 5px;
-    width: 200px;
-    cursor: pointer;
-    border-radius: 6px;
-    border: solid 1px gray;
-    box-shadow: 0px 1px 2px black;
+.filterContainer select {
+  background-color: white;
+  color: gray;
+  margin: 16px;
+  padding: 5px;
+  width: 200px;
+  cursor: pointer;
+  border-radius: 6px;
+  border: solid 1px gray;
+  box-shadow: 0px 1px 2px black;
 }
 
-.filterList{
-    position: relative;
-    right: 47px;
+.filterList {
+  position: relative;
+  right: 47px;
 }
 
 .searchBar {
-    color: black;
-    width: 200px;
-    position: relative;
-    right: 2px;
-    padding: 6px;
-    background-color: white;
-    border: solid gray 1px;
-    border-radius: 6px;
-    box-shadow: 0px 1px 2px black;
+  color: black;
+  width: 200px;
+  position: relative;
+  right: 2px;
+  padding: 6px;
+  background-color: white;
+  border: solid gray 1px;
+  border-radius: 6px;
+  box-shadow: 0px 1px 2px black;
 }
 
-.searchButton{
-    border: none;
-    border-radius: 100%;
-    width: 20px;
-    height: 20px;
-    position: relative;
-    right: 31px;
-    background-color: black;
-    top: 4.5px;
-    font-size: 16px;
-    background:none;
+.searchButton {
+  border: none;
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  right: 31px;
+  background-color: black;
+  top: 4.5px;
+  font-size: 16px;
+  background: none;
 }
 
-.searchButton{
-    display: inline-block;
+.searchButton {
+  display: inline-block;
 }
 
-button img{
-    width: 22px;
-    height: 22px;
-    position: relative;
-    right: 2px;
-    top: 2px;
-    cursor: pointer;
+button img {
+  width: 22px;
+  height: 22px;
+  position: relative;
+  right: 2px;
+  top: 2px;
+  cursor: pointer;
+}
+
+.clearButton {
+  background-color: white;
+  color: red;
+  font-size: 14px;
+  top: 1.2px;
+  right: 0px;
+  position: relative;
+  border: none;
+  width: 29px;
+  height: 29px;
+  border: solid 1px gray;
+  cursor: pointer;
+  border-radius: 6px;
+  box-shadow: 0px 1px 2px black;
+}
+
+.clearButton:hover {
+  color: white;
+  background-color: red;
 }
